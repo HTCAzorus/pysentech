@@ -1,0 +1,36 @@
+[build-system]
+requires = [
+    'setuptools==72.1.0',
+    'wheel',
+    'numpy', 
+    "setuptools-scm"]
+# build-backend = "nuitka.distutils.Build"
+build-backend = "setuptools.build_meta"
+
+
+[project]
+name = "pysentech"
+readme = "README.md"
+# Set version via 
+# git tag vX.Y.Z
+# git push origin
+# git push origin --tags
+dynamic = ["version"]
+description = "pysentech is a python wrapper for the Sentech USB Camera SD."
+authors = [{name = "derricw", email = "derricw@gmail.com"}]
+# license = "MIT"
+requires-python = ">=3.13"
+dependencies = [
+    "numpy"
+    ]
+license = {text="MIT"}
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+
+[tool.setuptools_scm]
+write_to = "src/pysentech/__version__.py"
+# Force simple x.y.z version output
+version_scheme = "only-version"
+local_scheme = "no-local-version"
